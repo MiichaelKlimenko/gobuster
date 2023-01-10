@@ -15,6 +15,10 @@ RUN mkdir -p /app \
     && adduser -D gobuster \
     && chown -R gobuster:gobuster /app
 
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+
+RUN update-alternatives --set python /usr/bin/python3.7
+
 USER gobuster
 WORKDIR /app
 
