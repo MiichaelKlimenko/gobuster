@@ -16,6 +16,7 @@ RUN mkdir -p /app \
     && chown -R gobuster:gobuster /app
 
 RUN apk add --no-cache python3 py3-pip
+RUN pip3 install requests
 
 USER gobuster
 WORKDIR /app
